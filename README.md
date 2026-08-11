@@ -1,6 +1,14 @@
-# TurboQuant Lab: AI Quantization & Compression Engine Prototype
+# QuantForge — Neural Network Quantization & Compression Research Prototype
 
-This repository contains **TurboQuant Lab**, located in `turboquant-lab/`.
+This repository contains **QuantForge**, located in `turboquant-lab/`.
+
+## Disclaimer
+
+QuantForge is an independent research and learning prototype for
+low-bit neural network quantization and compression.
+
+It is not an implementation of Google's TurboQuant and is not
+affiliated with Google.
 
 ## Quick Start
 

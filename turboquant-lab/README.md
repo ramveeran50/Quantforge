@@ -1,8 +1,14 @@
-# TurboQuant-inspired Quantization Lab: AI Quantization & Compression Engine Prototype
+# QuantForge — Neural Network Quantization & Compression Research Prototype
 
 A simple, educational Python research prototype demonstrating how continuous floating-point numerical data (such as neural network weights and activations) can be compressed using **uniform scalar quantization**, packed into low-bit byte representations (8-bit, 4-bit, 2-bit), reconstructed, and evaluated for actual memory savings and information loss.
 
-> **Note on Branding**: This is a research/learning prototype inspired by modern AI quantization techniques. Do NOT claim that this implementation is Google's TurboQuant. We will study and compare with TurboQuant in a later phase.
+## Disclaimer
+
+QuantForge is an independent research and learning prototype for
+low-bit neural network quantization and compression.
+
+It is not an implementation of Google's TurboQuant and is not
+affiliated with Google.
 
 ---
 
