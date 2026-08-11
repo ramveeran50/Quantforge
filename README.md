@@ -1,11 +1,15 @@
-<div align="center">
+# TurboQuant Lab: AI Quantization & Compression Engine Prototype
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This repository contains **TurboQuant Lab**, located in `turboquant-lab/`.
 
-  <h1>Built with AI Studio</h2>
+## Quick Start
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+# Run quantization experiments & generate charts
+python3 turboquant-lab/experiments/test_quantization.py
+```
 
-</div>
+For full mathematical documentation and project structure, please see [turboquant-lab/README.md](turboquant-lab/README.md).

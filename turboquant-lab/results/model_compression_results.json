@@ -1,0 +1,305 @@
+{
+  "model_architecture": "SmallNeuralNetwork (Linear 784->128 -> Linear 128->64 -> Linear 64->10)",
+  "total_parameters": 109386,
+  "total_original_bytes": 437544,
+  "disclaimer": "Testing weight tensor compression engine applicability. Not full inference engine quantization.",
+  "precisions": {
+    "INT8": {
+      "bits": 8,
+      "total_compressed_bytes": 109464,
+      "overall_compression_ratio": 3.997,
+      "overall_storage_saved_percent": 74.98,
+      "overall_mse": 9.467612861433728e-09,
+      "overall_mae": 7.8793546075298e-05,
+      "overall_max_error": 0.0004852116107940674,
+      "output_validation": {
+        "output_mse": 5.386415059044445e-07,
+        "output_mae": 0.0005741748260334134,
+        "output_max_diff": 0.0019341371953487396,
+        "param_shapes_matched": true,
+        "has_nan_or_inf": false
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "fc1.weight",
+          "shape": [
+            128,
+            784
+          ],
+          "param_count": 100352,
+          "orig_bytes": 401408,
+          "packed_bytes": 100352,
+          "total_compressed_bytes": 100365,
+          "compression_ratio": 3.999,
+          "mse": 6.547147678311205e-09,
+          "mae": 7.009217653971092e-05
+        },
+        {
+          "layer_name": "fc1.bias",
+          "shape": [
+            128
+          ],
+          "param_count": 128,
+          "orig_bytes": 512,
+          "packed_bytes": 128,
+          "total_compressed_bytes": 141,
+          "compression_ratio": 3.631,
+          "mse": 6.770707668551886e-09,
+          "mae": 7.33573149602762e-05
+        },
+        {
+          "layer_name": "fc2.weight",
+          "shape": [
+            64,
+            128
+          ],
+          "param_count": 8192,
+          "orig_bytes": 32768,
+          "packed_bytes": 8192,
+          "total_compressed_bytes": 8205,
+          "compression_ratio": 3.994,
+          "mse": 3.954573728675681e-08,
+          "mae": 0.000171737458428467
+        },
+        {
+          "layer_name": "fc2.bias",
+          "shape": [
+            64
+          ],
+          "param_count": 64,
+          "orig_bytes": 256,
+          "packed_bytes": 64,
+          "total_compressed_bytes": 77,
+          "compression_ratio": 3.325,
+          "mse": 3.2314150648965286e-08,
+          "mae": 0.00015760258986574627
+        },
+        {
+          "layer_name": "fc3.weight",
+          "shape": [
+            10,
+            64
+          ],
+          "param_count": 640,
+          "orig_bytes": 2560,
+          "packed_bytes": 640,
+          "total_compressed_bytes": 653,
+          "compression_ratio": 3.92,
+          "mse": 7.966039720443402e-08,
+          "mae": 0.00024404334362770896
+        },
+        {
+          "layer_name": "fc3.bias",
+          "shape": [
+            10
+          ],
+          "param_count": 10,
+          "orig_bytes": 40,
+          "packed_bytes": 10,
+          "total_compressed_bytes": 23,
+          "compression_ratio": 1.739,
+          "mse": 7.288463598456792e-08,
+          "mae": 0.00024834294454194604
+        }
+      ]
+    },
+    "INT4": {
+      "bits": 4,
+      "total_compressed_bytes": 54771,
+      "overall_compression_ratio": 7.989,
+      "overall_storage_saved_percent": 87.48,
+      "overall_mse": 2.7421950675401633e-06,
+      "overall_mae": 0.0013394266063503641,
+      "overall_max_error": 0.008287820965051651,
+      "output_validation": {
+        "output_mse": 0.0002013707726105031,
+        "output_mae": 0.011649913451401516,
+        "output_max_diff": 0.03268611431121826,
+        "param_shapes_matched": true,
+        "has_nan_or_inf": false
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "fc1.weight",
+          "shape": [
+            128,
+            784
+          ],
+          "param_count": 100352,
+          "orig_bytes": 401408,
+          "packed_bytes": 50176,
+          "total_compressed_bytes": 50189,
+          "compression_ratio": 7.998,
+          "mse": 1.8894000800528114e-06,
+          "mae": 0.0011901247071048513
+        },
+        {
+          "layer_name": "fc1.bias",
+          "shape": [
+            128
+          ],
+          "param_count": 128,
+          "orig_bytes": 512,
+          "packed_bytes": 64,
+          "total_compressed_bytes": 77,
+          "compression_ratio": 6.649,
+          "mse": 1.7507664939167056e-06,
+          "mae": 0.0011307625161691703
+        },
+        {
+          "layer_name": "fc2.weight",
+          "shape": [
+            64,
+            128
+          ],
+          "param_count": 8192,
+          "orig_bytes": 32768,
+          "packed_bytes": 4096,
+          "total_compressed_bytes": 4109,
+          "compression_ratio": 7.975,
+          "mse": 1.1542921358723449e-05,
+          "mae": 0.0029390647693556815
+        },
+        {
+          "layer_name": "fc2.bias",
+          "shape": [
+            64
+          ],
+          "param_count": 64,
+          "orig_bytes": 256,
+          "packed_bytes": 32,
+          "total_compressed_bytes": 45,
+          "compression_ratio": 5.689,
+          "mse": 9.376951917499593e-06,
+          "mae": 0.002578371644744948
+        },
+        {
+          "layer_name": "fc3.weight",
+          "shape": [
+            10,
+            64
+          ],
+          "param_count": 640,
+          "orig_bytes": 2560,
+          "packed_bytes": 320,
+          "total_compressed_bytes": 333,
+          "compression_ratio": 7.688,
+          "mse": 2.3019781843827193e-05,
+          "mae": 0.0041443106427323075
+        },
+        {
+          "layer_name": "fc3.bias",
+          "shape": [
+            10
+          ],
+          "param_count": 10,
+          "orig_bytes": 40,
+          "packed_bytes": 5,
+          "total_compressed_bytes": 18,
+          "compression_ratio": 2.222,
+          "mse": 2.36177639835391e-05,
+          "mae": 0.004419336561113596
+        }
+      ]
+    },
+    "INT2": {
+      "bits": 2,
+      "total_compressed_bytes": 27425,
+      "overall_compression_ratio": 15.954,
+      "overall_storage_saved_percent": 93.73,
+      "overall_mse": 6.809911369310188e-05,
+      "overall_mae": 0.006696061009716704,
+      "overall_max_error": 0.04149073362350464,
+      "output_validation": {
+        "output_mse": 0.00303352373833621,
+        "output_mae": 0.043568149319617076,
+        "output_max_diff": 0.15866274386644363,
+        "param_shapes_matched": true,
+        "has_nan_or_inf": false
+      },
+      "layer_breakdown": [
+        {
+          "layer_name": "fc1.weight",
+          "shape": [
+            128,
+            784
+          ],
+          "param_count": 100352,
+          "orig_bytes": 401408,
+          "packed_bytes": 25088,
+          "total_compressed_bytes": 25101,
+          "compression_ratio": 15.992,
+          "mse": 4.7520080856189215e-05,
+          "mae": 0.005973265611393264
+        },
+        {
+          "layer_name": "fc1.bias",
+          "shape": [
+            128
+          ],
+          "param_count": 128,
+          "orig_bytes": 512,
+          "packed_bytes": 32,
+          "total_compressed_bytes": 45,
+          "compression_ratio": 11.378,
+          "mse": 4.405142733770209e-05,
+          "mae": 0.005587541235200888
+        },
+        {
+          "layer_name": "fc2.weight",
+          "shape": [
+            64,
+            128
+          ],
+          "param_count": 8192,
+          "orig_bytes": 32768,
+          "packed_bytes": 2048,
+          "total_compressed_bytes": 2061,
+          "compression_ratio": 15.899,
+          "mse": 0.0002814846101239601,
+          "mae": 0.014473981675967806
+        },
+        {
+          "layer_name": "fc2.bias",
+          "shape": [
+            64
+          ],
+          "param_count": 64,
+          "orig_bytes": 256,
+          "packed_bytes": 16,
+          "total_compressed_bytes": 29,
+          "compression_ratio": 8.828,
+          "mse": 0.00022573839468343758,
+          "mae": 0.012490871249724478
+        },
+        {
+          "layer_name": "fc3.weight",
+          "shape": [
+            10,
+            64
+          ],
+          "param_count": 640,
+          "orig_bytes": 2560,
+          "packed_bytes": 160,
+          "total_compressed_bytes": 173,
+          "compression_ratio": 14.798,
+          "mse": 0.0005494286905809775,
+          "mae": 0.019996583554893733
+        },
+        {
+          "layer_name": "fc3.bias",
+          "shape": [
+            10
+          ],
+          "param_count": 10,
+          "orig_bytes": 40,
+          "packed_bytes": 3,
+          "total_compressed_bytes": 16,
+          "compression_ratio": 2.5,
+          "mse": 0.00027123682870686117,
+          "mae": 0.014288657158613206
+        }
+      ]
+    }
+  }
+}
