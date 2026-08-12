@@ -22,7 +22,8 @@ affiliated with Google.
 6. [Why Quantization Introduces Approximation Error](#6-why-quantization-introduces-approximation-error)
 7. [Difference from Google's TurboQuant](#7-difference-from-googles-turboquant)
 8. [Project Structure](#project-structure)
-9. [Getting Started & Running Experiments](#getting-started--running-experiments)
+9. [Prototype 2 — Neural Network Weight Compression](#9-prototype-2--neural-network-weight-compression)
+10. [Getting Started & Running Experiments](#getting-started--running-experiments)
 
 ---
 
@@ -126,7 +127,7 @@ This laboratory prototype is a basic **uniform scalar quantizer** created for ed
 ## Project Structure
 
 ```text
-turboquant-lab/
+QuantForge-lab/
 │
 ├── compression/
 │   ├── __init__.py
@@ -134,21 +135,29 @@ turboquant-lab/
 │   └── quantizer.py
 │
 ├── experiments/
+│   ├── test_model_compression.py
 │   └── test_quantization.py
 │
-├── results/
-│   ├── original_vs_reconstructed.png
-│   └── bits_vs_mse.png
+├── models/
+│   ├── __init__.py
+│   └── small_network.py
 │
-├── requirements.txt
-└── README.md
+├── results/
+│   ├── bits_vs_mse.png
+│   ├── model_compression_by_layer.png
+│   ├── model_compression_results.json
+│   ├── model_orig_vs_reconstructed.png
+│   ├── model_quantization_error_hist.png
+│   ├── model_weight_distribution.png
+│   └── original_vs_reconstructed.png
+│
+├── README.md
+└── requirements.txt
 ```
-
-10. [Prototype 2 — Neural Network Weight Compression](#10-prototype-2--neural-network-weight-compression)
 
 ---
 
-## 10. Prototype 2 — Neural Network Weight Compression
+## 9. Prototype 2 — Neural Network Weight Compression
 
 Prototype 2 applies our existing quantization and bit-packing pipeline (`quantize()`, `pack_bits()`, `unpack_bits()`, `dequantize()`) to **real neural-network weight tensors** extracted from a PyTorch `SmallNeuralNetwork` model (109,386 parameters across `Linear(784, 128)`, `Linear(128, 64)`, and `Linear(64, 10)`).
 
@@ -164,6 +173,10 @@ Prototype 2 applies our existing quantization and bit-packing pipeline (`quantiz
 
 ### Running Prototype 2
 ```bash
+# From repository root:
+python3 turboquant-lab/experiments/test_model_compression.py
+
+# Or from inside turboquant-lab/:
 python3 experiments/test_model_compression.py
 ```
 
@@ -174,6 +187,9 @@ Generated visualization artifacts in `results/`:
 * `model_compression_by_layer.png`: Layer-by-layer actual compression ratio bar chart.
 * `model_compression_results.json`: Complete structured metrics benchmark log.
 
+---
+
+## 10. Getting Started & Running Experiments
 
 ### 1. Requirements
 
@@ -183,12 +199,19 @@ Install required Python dependencies:
 pip install -r requirements.txt
 ```
 
-### 2. Run the Benchmark Experiment & Unit Tests
+### 2. Run Benchmarks & Experiments
 
-Execute unit tests, bit packing validation, and benchmark experiments:
+Execute unit tests, bit packing validation, and scalar quantization benchmark experiments:
 
 ```bash
+# From repository root:
+python3 turboquant-lab/experiments/test_quantization.py
+python3 turboquant-lab/experiments/test_model_compression.py
+
+# Or from inside turboquant-lab/:
 python3 experiments/test_quantization.py
+python3 experiments/test_model_compression.py
 ```
 
-Upon completion, all tests and metrics will output in the console and visualization plots will be generated in `results/`.
+Upon completion, all benchmark metrics will output in the console and visualization plots will be generated in `results/`.
+
